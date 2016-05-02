@@ -78,7 +78,7 @@ grunt.loadNpmTasks('grunt-connect-proxy');
       },
       proxies: [{
 //TODCHANGE
-      context: '/data-service-path', // the context of the data service
+      context: ['/data-service-path','/rest/Person'], // the context of the data service
       host: 'localhost', // wherever the data service is running
       port: 8080 // the port that the data service is running on
       }],
@@ -105,7 +105,7 @@ grunt.loadNpmTasks('grunt-connect-proxy');
       },
       test: {
         options: {
-          port: 9001,
+          port: 9003,
           middleware: function (connect) {
 	var middlewares = [
               connect.static('.tmp'),
